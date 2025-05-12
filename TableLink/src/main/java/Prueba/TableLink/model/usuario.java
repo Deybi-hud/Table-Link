@@ -22,7 +22,7 @@ public class Usuario{
     private Integer id;
 
     @Column(unique = true, length = 20, nullable =false)
-    private String nombreUsario;
+    private String nombreUsuario;
 
     @Column(nullable = false)
     private String contrasena;
