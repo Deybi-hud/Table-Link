@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Table(name= "usuario")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Usuario{
+public class usuario{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,3 +28,4 @@ public class Usuario{
     private String contrasena;
 }
 //hola que tal 
+//nashei
