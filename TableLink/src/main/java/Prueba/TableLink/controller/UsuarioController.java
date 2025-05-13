@@ -56,7 +56,5 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se puedo guardar");
         }
     }
-    
-    
-    
+       
 }
