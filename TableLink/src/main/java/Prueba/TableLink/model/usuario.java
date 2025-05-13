@@ -27,5 +27,3 @@ public class usuario{
     @Column(nullable = false)
     private String contrasena;
 }
-//hola que tal 
-//nashei
