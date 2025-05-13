@@ -10,8 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
 @Entity
 @Data
 @Table(name= "usuario")
@@ -29,4 +27,3 @@ public class usuario{
     @Column(nullable = false)
     private String contrasena;
 }
-//asjdad
