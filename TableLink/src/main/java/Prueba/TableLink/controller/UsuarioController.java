@@ -47,9 +47,14 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<Usuario> guardar(@RequestBody Usuario usuario) {
+    public ResponseEntity<?> guardar(@RequestBody Usuario usuario) {
+        try{
         Usuario nuevoUsuario = usuarioServices.save(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoUsuario);
+        }
+        catch(Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se puedo guardar");
+        }
     }
     
     
