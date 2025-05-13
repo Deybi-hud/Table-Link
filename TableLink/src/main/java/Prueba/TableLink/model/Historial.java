@@ -2,6 +2,8 @@ package Prueba.TableLink.model;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,7 +28,8 @@ public class Historial {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(unique = true, length = 20, nullable =false)
+    @Column(nullable =false)
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date fechaConversion;
 
     @Column(nullable = false)
