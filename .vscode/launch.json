@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-TableLinkApplication<TableLink>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "Prueba.TableLink.TableLinkApplication",
+            "projectName": "TableLink",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
