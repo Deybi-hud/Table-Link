@@ -2,7 +2,10 @@ package Prueba.TableLink.service;
 
 
 
-import org.apache.poi.ss.usermodel.*;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,14 +32,14 @@ public class SqlToExcelService {
         try (Workbook workbook = new XSSFWorkbook(); ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             Sheet sheet = workbook.createSheet("DatosSQL");
 
-            // Encabezados
+            
             Row headerRow = sheet.createRow(0);
             List<String> columnas = new ArrayList<>(filas.get(0).keySet());
             for (int i = 0; i < columnas.size(); i++) {
                 headerRow.createCell(i).setCellValue(columnas.get(i));
             }
 
-            // Datos
+          
             int rowIdx = 1;
             for (Map<String, String> fila : filas) {
                 Row row = sheet.createRow(rowIdx++);

@@ -3,8 +3,14 @@ package Prueba.TableLink.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import Prueba.TableLink.service.SqlToExcelService;
@@ -17,7 +23,7 @@ public class SqlToExcelController {
     private SqlToExcelService exportService;
 
     @PostMapping("/convertir")
-    public ResponseEntity<byte[]> convertirArchivoSql(@RequestParam("archivoSql") MultipartFile archivoSql) {
+    public ResponseEntity<byte[]> convertirArchivoSql(@RequestParam("archivoSql") MultipartFile archivoSql){       
         try {
             byte[] excelFile = exportService.convertirSqlAExcel(archivoSql);
 
@@ -26,10 +32,12 @@ public class SqlToExcelController {
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .body(excelFile);
 
-        } catch (IllegalArgumentException e) {
+            } 
+        catch (IllegalArgumentException e){
             return ResponseEntity.badRequest()
                     .body(("Archivo inválido: " + e.getMessage()).getBytes());
-        } catch (Exception e) {
+            } 
+        catch (Exception e){
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(("Error interno: " + e.getMessage()).getBytes());
