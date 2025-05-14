@@ -1,17 +1,20 @@
 package Prueba.TableLink.controller;
 
-import Prueba.TableLink.service.ExportService;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import Prueba.TableLink.service.SqlToExcelService;
+
 @RestController
 @RequestMapping("/api/sql-to-excel")
-public class ExportController {
+public class SqlToExcelController {
 
     @Autowired
-    private ExportService exportService;
+    private SqlToExcelService exportService;
 
     @PostMapping("/convertir")
     public ResponseEntity<byte[]> convertirArchivoSql(@RequestParam("archivoSql") MultipartFile archivoSql) {
@@ -23,11 +26,14 @@ public class ExportController {
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .body(excelFile);
 
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest()
+                    .body(("Archivo inválido: " + e.getMessage()).getBytes());
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(("Error al procesar el archivo: " + e.getMessage()).getBytes());
+                    .body(("Error interno: " + e.getMessage()).getBytes());
         }
     }
 }
-
 

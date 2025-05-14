@@ -1,44 +1,38 @@
 package Prueba.TableLink.util;
 
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.regex.*;
 
 public class SqlParserUtil {
+    public static List<Map<String, String>> parseInsertStatements(String sqlContent) {
+    List<Map<String, String>> result = new ArrayList<>();
 
-    /**
-     * Extrae los datos de un archivo SQL, buscando las sentencias INSERT INTO.
-     * 
-     * @param archivoSql El archivo .sql subido
-     * @return Lista de registros (como List<List<String>>) que pueden ser insertados en Excel
-     * @throws IOException Si hay algún problema al leer el archivo
-     */
-    public static List<List<String>> extraerDatosDeInsert(MultipartFile archivoSql) throws IOException {
-        List<List<String>> registros = new ArrayList<>();
+    // Match INSERT INTO tabla (col1, col2) VALUES (...), (...);
+    Pattern pattern = Pattern.compile(
+        "INSERT INTO [`\"]?(\\w+)[`\"]? \\(([^)]+)\\) VALUES\\s*(.+?);",
+        Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+    Matcher matcher = pattern.matcher(sqlContent);
 
-        // Leer el archivo SQL como texto
-        String sqlContent = new String(archivoSql.getBytes());
+    while (matcher.find()) {
+        String[] columns = matcher.group(2).split(",");
+        String valuesGroup = matcher.group(3).trim();
 
-        // Buscar todas las sentencias INSERT INTO
-        String[] lineas = sqlContent.split("\n");
-        for (String linea : lineas) {
-            if (linea.trim().startsWith("INSERT INTO")) {
-                // Procesar cada sentencia INSERT INTO
-                String valores = linea.substring(linea.indexOf("(") + 1, linea.indexOf(")"));
-                String[] valoresSeparados = valores.split(",");
+        // Separar los grupos de valores: (1, 'Juan'), (2, 'Ana')
+        Matcher valueMatcher = Pattern.compile("\\(([^)]+)\\)").matcher(valuesGroup);
+        while (valueMatcher.find()) {
+            String[] values = valueMatcher.group(1).split(",(?=(?:[^']*'[^']*')*[^']*$)"); // No cortar dentro de strings
+            if (columns.length != values.length) continue;
 
-                // Limpiar y agregar a la lista de registros
-                List<String> registro = new ArrayList<>();
-                for (String valor : valoresSeparados) {
-                    registro.add(valor.trim().replace("'", ""));  // Eliminar comillas simples
-                }
-
-                registros.add(registro);
+            Map<String, String> row = new LinkedHashMap<>();
+            for (int i = 0; i < columns.length; i++) {
+                row.put(columns[i].trim(), values[i].trim().replaceAll("^'|'$", "")); // quitar comillas
             }
+            result.add(row);
         }
+    }
 
-        return registros;
+    return result;
     }
 }
+
+
