@@ -1,6 +1,7 @@
 package Prueba.TableLink.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import Prueba.TableLink.model.Usuario;
+import Prueba.TableLink.repository.UsuarioRepository;
 import Prueba.TableLink.service.UsuarioServices;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +25,6 @@ public class UsuarioController {
     @Autowired
     private UsuarioServices usuarioServices;
 
-
     @GetMapping
     public ResponseEntity<List<Usuario>>listar(){
         List<Usuario> usuario = usuarioServices.findAll();
@@ -32,8 +33,6 @@ public class UsuarioController {
         }
         return ResponseEntity.ok(usuario);
     }    
-
-
 
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> buscar(@PathVariable long id) {
@@ -47,7 +46,7 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<?> guardar(@RequestBody Usuario usuario) {
+    public ResponseEntity<?> registrar(@RequestBody Usuario usuario) {
         try{
         Usuario nuevoUsuario = usuarioServices.save(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoUsuario);
@@ -55,6 +54,5 @@ public class UsuarioController {
         catch(Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se puedo guardar");
         }
-    }
-       
+    } 
 }
