@@ -1,6 +1,6 @@
 package Prueba.TableLink.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -30,7 +30,7 @@ public class Historial {
 
     @Column(nullable =false)
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date fechaConversion;
+    private LocalDate fechaConversion;
 
     @Column(nullable = false)
     private String tipoConversion;
