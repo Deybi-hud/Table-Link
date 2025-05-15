@@ -7,12 +7,18 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import Prueba.TableLink.model.Historial;
+import Prueba.TableLink.model.Usuario;
+import Prueba.TableLink.repository.HistorialRepository;
+import Prueba.TableLink.repository.UsuarioRepository;
 import Prueba.TableLink.util.SqlParserUtil;
 
 import java.io.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -20,7 +26,18 @@ import java.util.Map;
 @Service
 public class SqlToExcelService {
 
-    public byte[] convertirSqlAExcel(MultipartFile archivoSql) throws IOException {
+    @Autowired
+    UsuarioRepository usuarioRepository;
+
+    @Autowired 
+    HistorialRepository historialRepository;
+
+
+    public byte[] convertirSqlAExcel(MultipartFile archivoSql,String nombreUsuario) throws IOException {
+        
+        Usuario usuario = usuarioRepository.findByNombreUsuario(nombreUsuario)
+        .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
         String contenidoSql = new String(archivoSql.getBytes());
 
         List<Map<String, String>> filas = SqlParserUtil.parseInsertStatements(contenidoSql);
@@ -28,6 +45,13 @@ public class SqlToExcelService {
         if (filas.isEmpty()) {
             throw new IllegalArgumentException("No se encontraron INSERTs válidos en el archivo SQL.");
         }
+
+            Historial historial = new Historial();
+            historial.setUsuario(usuario);
+            historial.setFechaConversion(LocalDateTime.now());
+            historial.setTipoConversion("SQL a Excel");
+            historial.setDescripcion("Conversión de archivo SQL a Excel con ");
+            historialRepository.save(historial);
 
         try (Workbook workbook = new XSSFWorkbook(); ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             Sheet sheet = workbook.createSheet("DatosSQL");
@@ -52,4 +76,10 @@ public class SqlToExcelService {
             return out.toByteArray();
         }
     }
+
+
+
+
+    
+
 }

@@ -8,14 +8,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-
-
-
-
-
-//import java.util.*;
-//import java.util.regex.*;
-
 public class SqlParserUtil {
 
     public static List<Map<String, String>> parseInsertStatements(String sqlContent) {

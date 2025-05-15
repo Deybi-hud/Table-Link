@@ -44,7 +44,7 @@ public class UsuarioController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/registrar")
     public ResponseEntity<?> registrar(@RequestBody Usuario usuario) {
         try{
         Usuario nuevoUsuario = usuarioServices.save(usuario);
@@ -54,4 +54,7 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se puedo guardar");
         }
     } 
+
+    
+
 }

@@ -23,16 +23,15 @@ public class SqlToExcelController {
     private SqlToExcelService exportService;
 
     @PostMapping("/convertir")
-    public ResponseEntity<byte[]> convertirArchivoSql(@RequestParam("archivoSql") MultipartFile archivoSql){       
+    public ResponseEntity<byte[]> convertirArchivoSql(  @RequestParam("archivoSql") MultipartFile archivoSql, @RequestParam("nombreUsuario") String nombreUsuario){       
         try {
-            byte[] excelFile = exportService.convertirSqlAExcel(archivoSql);
+            byte[] excelFile = exportService.convertirSqlAExcel(archivoSql, nombreUsuario);
 
             return ResponseEntity.ok()
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=resultado.xlsx")
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; resultado.xlsx")
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .body(excelFile);
-
-            } 
+            }     
         catch (IllegalArgumentException e){
             return ResponseEntity.badRequest()
                     .body(("Archivo inválido: " + e.getMessage()).getBytes());
