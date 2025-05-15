@@ -48,7 +48,7 @@ public class SqlToExcelService {
             historial.setUsuario(usuario);
             historial.setFechaConversion(LocalDate.now());
             historial.setTipoConversion("SQL a Excel");
-            historial.setDescripcion("Conversión de archivo SQL a Excel con ");
+            historial.setDescripcion("Conversión de archivo SQL a Excel con");
             historialRepository.save(historial);
 
         try (Workbook workbook = new XSSFWorkbook(); ByteArrayOutputStream out = new ByteArrayOutputStream()) {
