@@ -1,8 +1,5 @@
 package Prueba.TableLink.service;
 
-
-
-
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -17,8 +14,9 @@ import Prueba.TableLink.repository.HistorialRepository;
 import Prueba.TableLink.repository.UsuarioRepository;
 import Prueba.TableLink.util.SqlParserUtil;
 
-import java.io.*;
-import java.time.LocalDateTime;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -48,7 +46,7 @@ public class SqlToExcelService {
 
             Historial historial = new Historial();
             historial.setUsuario(usuario);
-            historial.setFechaConversion(LocalDateTime.now());
+            historial.setFechaConversion(LocalDate.now());
             historial.setTipoConversion("SQL a Excel");
             historial.setDescripcion("Conversión de archivo SQL a Excel con ");
             historialRepository.save(historial);

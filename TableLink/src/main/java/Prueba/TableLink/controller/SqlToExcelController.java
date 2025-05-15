@@ -28,7 +28,7 @@ public class SqlToExcelController {
             byte[] excelFile = exportService.convertirSqlAExcel(archivoSql, nombreUsuario);
 
             return ResponseEntity.ok()
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; resultado.xlsx")
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment = resultado.xlsx")
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .body(excelFile);
             }     
