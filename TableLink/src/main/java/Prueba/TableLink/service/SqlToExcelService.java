@@ -17,7 +17,8 @@ import Prueba.TableLink.repository.HistorialRepository;
 import Prueba.TableLink.repository.UsuarioRepository;
 import Prueba.TableLink.util.SqlParserUtil;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.time.LocalDate;
 
 import java.util.ArrayList;

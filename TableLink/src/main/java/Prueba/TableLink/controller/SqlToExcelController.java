@@ -28,10 +28,10 @@ public class SqlToExcelController {
             byte[] excelFile = exportService.convertirSqlAExcel(archivoSql, nombreUsuario);
 
             return ResponseEntity.ok()
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename= resultado.xlsx")
-                    .header("x-mensaje","Archivo convertido exitosamente")
-                    .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                    .body(excelFile);
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename= resultado.xlsx")
+                .header("x-mensaje","Archivo convertido exitosamente")
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(excelFile);
             }     
         catch (IllegalArgumentException e){
             return ResponseEntity.badRequest()

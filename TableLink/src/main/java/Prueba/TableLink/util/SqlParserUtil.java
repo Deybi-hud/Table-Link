@@ -14,10 +14,10 @@ public class SqlParserUtil {
     List<Map<String, String>> result = new ArrayList<>();
 
  
-    Pattern pattern = Pattern.compile(
+        Pattern pattern = Pattern.compile(
         "INSERT INTO [`\"]?(\\w+)[`\"]? \\(([^)]+)\\) VALUES\\s*(.+?);",
         Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
-    Matcher matcher = pattern.matcher(sqlContent);
+        Matcher matcher = pattern.matcher(sqlContent);
 
     while (matcher.find()) {
         String[] columns = matcher.group(2).split(",");
