@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import Prueba.TableLink.service.SqlToExcelService;
 
 @RestController
-@RequestMapping("/api/sql-to-excel")
+@RequestMapping("/api/v1/sql-to-excel")
 public class SqlToExcelController {
 
     @Autowired
