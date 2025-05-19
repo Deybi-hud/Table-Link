@@ -1,6 +1,9 @@
 package Prueba.TableLink.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +32,10 @@ public class HistorialService {
 
     public void delete(long id){
         historialRepository.deleteById(id);;
+    }
+
+    public List<Historial> obtenerHistorialPorUsuario(Long usuarioId) {
+        return historialRepository.obtenerHistorialPorUsuario(usuarioId);
     }
 
 }

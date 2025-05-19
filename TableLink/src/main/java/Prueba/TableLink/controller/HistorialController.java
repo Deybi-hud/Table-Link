@@ -1,6 +1,7 @@
 package Prueba.TableLink.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,8 +33,6 @@ public class HistorialController{
         return ResponseEntity.ok(historial);
     }    
 
-
-
     @GetMapping("/{id}")
     public ResponseEntity<Historial> buscar(@PathVariable long id) {
         try{
@@ -44,6 +43,21 @@ public class HistorialController{
             return ResponseEntity.notFound().build();
         }
     }
+
+ 
+    @GetMapping("/usuario/{id}")
+    public ResponseEntity<List<Historial>> obtenerHistorialPorUsuario(@PathVariable("id") Long usuarioId) {
+        List<Historial> historial = historialService.obtenerHistorialPorUsuario(usuarioId);
+        if (historial.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(historial);
+    }
+
+
+
+
+
 
     @PostMapping
     public ResponseEntity<Historial> guardar(@RequestBody Historial historial) {

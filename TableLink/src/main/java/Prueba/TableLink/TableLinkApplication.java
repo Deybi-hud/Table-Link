@@ -10,4 +10,6 @@ public class TableLinkApplication {
 		SpringApplication.run(TableLinkApplication.class, args);
 	}
 
+	
+
 }

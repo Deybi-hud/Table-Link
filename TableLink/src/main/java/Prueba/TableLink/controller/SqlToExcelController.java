@@ -32,7 +32,10 @@ public class SqlToExcelController {
                 .header("x-mensaje","Archivo convertido exitosamente")
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .body(excelFile);
-            }     
+            }  
+            
+            
+            
         catch (IllegalArgumentException e){
             return ResponseEntity.badRequest()
                     .body(("Archivo inválido: " + e.getMessage()).getBytes());
