@@ -43,8 +43,7 @@ public class HistorialController{
         }
     }
 
- 
-    @GetMapping("/usuario/{id}")
+    @GetMapping("/usuarios/{id}")
     public ResponseEntity<List<Historial>> obtenerHistorialPorUsuario(@PathVariable("id") Long usuarioId) {
         List<Historial> historial = historialService.obtenerHistorialPorUsuario(usuarioId);
         if (historial.isEmpty()) {
@@ -52,11 +51,6 @@ public class HistorialController{
         }
         return ResponseEntity.ok(historial);
     }
-
-
-
-
-
 
     @PostMapping
     public ResponseEntity<Historial> guardar(@RequestBody Historial historial) {

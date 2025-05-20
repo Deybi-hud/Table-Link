@@ -57,33 +57,29 @@ public class SqlToExcelService {
             historial.setDescripcion("Conversión de archivo SQL a Excel con ");
             historialRepository.save(historial);
 
-        try (Workbook workbook = new XSSFWorkbook(); ByteArrayOutputStream out = new ByteArrayOutputStream()) {
-            Sheet sheet = workbook.createSheet("DatosSQL");
+            try (Workbook workbook = new XSSFWorkbook(); ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+                Sheet sheet = workbook.createSheet("DatosSQL");
+
+                
+                Row headerRow = sheet.createRow(0);
+                List<String> columnas = new ArrayList<>(filas.get(0).keySet());
+                for (int i = 0; i < columnas.size(); i++) {
+                    headerRow.createCell(i).setCellValue(columnas.get(i));
+                }
 
             
-            Row headerRow = sheet.createRow(0);
-            List<String> columnas = new ArrayList<>(filas.get(0).keySet());
-            for (int i = 0; i < columnas.size(); i++) {
-                headerRow.createCell(i).setCellValue(columnas.get(i));
-            }
-
-          
-            int rowIdx = 1;
-            for (Map<String, String> fila : filas) {
-                Row row = sheet.createRow(rowIdx++);
-                for (int i = 0; i < columnas.size(); i++) {
-                    row.createCell(i).setCellValue(fila.get(columnas.get(i)));
+                int rowIdx = 1;
+                for (Map<String, String> fila : filas) {
+                    Row row = sheet.createRow(rowIdx++);
+                    for (int i = 0; i < columnas.size(); i++) {
+                        row.createCell(i).setCellValue(fila.get(columnas.get(i)));
+                    }
                 }
+
+                workbook.write(out);
+                return out.toByteArray();
             }
-
-            workbook.write(out);
-            return out.toByteArray();
-        }
+            
     }
-
-
-
-
-    
 
 }

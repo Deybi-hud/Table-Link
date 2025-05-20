@@ -2,7 +2,6 @@ package Prueba.TableLink.model;
 
 import java.time.LocalDate;
 
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
