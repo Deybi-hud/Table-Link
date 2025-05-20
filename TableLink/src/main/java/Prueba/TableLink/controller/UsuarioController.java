@@ -58,14 +58,14 @@ public class UsuarioController {
 
    @DeleteMapping("/{usuarioId}")
     public ResponseEntity<?> eliminar(@PathVariable Long usuarioId) {
-    try {
-        historialService.deleteByUsuarioId(usuarioId); 
-        usuarioServices.delete(usuarioId);             
-        return ResponseEntity.noContent().build();
-    } catch (Exception e) {
-        return ResponseEntity.notFound().build();
+        try {
+            historialService.deleteByUsuarioId(usuarioId); 
+            usuarioServices.delete(usuarioId);             
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
-}
 
     @PatchMapping("/{id}")
     public ResponseEntity<Usuario> patchUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
