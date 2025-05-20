@@ -17,7 +17,7 @@ import Prueba.TableLink.model.Historial;
 import Prueba.TableLink.service.HistorialService;
 
 @RestController
-@RequestMapping("api/v1/historial")
+@RequestMapping("api/v1/historiales")
 public class HistorialController{
 
     @Autowired
@@ -49,8 +49,6 @@ public class HistorialController{
         Historial nuevoHistorial = historialService.save(historial);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoHistorial);
     }
-
-    
 
     //Query
     @GetMapping("/usuario/{id}")

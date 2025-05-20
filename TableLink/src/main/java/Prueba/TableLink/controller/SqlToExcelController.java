@@ -14,13 +14,13 @@ import org.springframework.web.multipart.MultipartFile;
 import Prueba.TableLink.service.SqlToExcelService;
 
 @RestController
-@RequestMapping("/api/v1/sql-excel")
+@RequestMapping("/api/v1/convertir")
 public class SqlToExcelController {
 
     @Autowired
     private SqlToExcelService exportService;
 
-    @PostMapping("/convertir")
+    @PostMapping
     public ResponseEntity<byte[]> convertirArchivoSql(@RequestParam("archivoSql") MultipartFile archivoSql, @RequestParam("nombreUsuario") String nombreUsuario){       
         try {
             byte[] excelFile = exportService.convertirSqlAExcel(archivoSql, nombreUsuario);
