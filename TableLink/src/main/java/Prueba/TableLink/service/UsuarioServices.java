@@ -3,6 +3,7 @@ package Prueba.TableLink.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import Prueba.TableLink.model.Historial;
 import Prueba.TableLink.model.Usuario;
 import Prueba.TableLink.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;
@@ -28,5 +29,9 @@ public class UsuarioServices {
 
     public void delete(long id){
         usuariorRepository.deleteById(id);;
+    }
+
+    public List<Historial> obtenerHistorialPorUsuario(Long usuarioId) {
+    return usuariorRepository.obtenerUsuario(usuarioId);
     }
 }
