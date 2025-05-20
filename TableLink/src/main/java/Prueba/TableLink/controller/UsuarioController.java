@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import Prueba.TableLink.model.Usuario;
+import Prueba.TableLink.service.HistorialService;
 import Prueba.TableLink.service.UsuarioServices;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,6 +22,8 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioServices usuarioServices;
+    private HistorialService historialService;
+
 
     @GetMapping
     public ResponseEntity<List<Usuario>>listar(){
@@ -53,15 +56,16 @@ public class UsuarioController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminar(@PathVariable Long id){
-        try{
-            usuarioServices.delete(id);
-            return ResponseEntity.noContent().build();
-        }catch (Exception e){
-            return ResponseEntity.notFound().build();
-        }
+   @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminar(@PathVariable Long id) {
+    try {
+        historialService.deleteByUsuarioId(id); 
+        usuarioServices.delete(id);             
+        return ResponseEntity.noContent().build();
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
     }
+}
 
     @PatchMapping("/{id}")
     public ResponseEntity<Usuario> patchUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
