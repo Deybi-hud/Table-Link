@@ -30,7 +30,7 @@ public class UsuarioServices {
     }
 
     public void delete(long id){
-        usuariorRepository.deleteById(id);;
+        usuariorRepository.deleteById(id);
     }
 
    public Usuario patchUsuario(Long id, Usuario usuario){
