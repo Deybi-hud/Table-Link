@@ -57,4 +57,6 @@ public class HistorialController{
         Historial nuevoHistorial = historialService.save(historial);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoHistorial);
     }
+
+    
 }

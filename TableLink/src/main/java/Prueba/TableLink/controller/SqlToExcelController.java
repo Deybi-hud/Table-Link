@@ -34,11 +34,9 @@ public class SqlToExcelController {
                 .body(excelFile);
             }  
             
-            
-            
         catch (IllegalArgumentException e){
             return ResponseEntity.badRequest()
-                    .body(("Archivo inválido: " + e.getMessage()).getBytes());
+                .body(("Archivo inválido: " + e.getMessage()).getBytes());
             } 
         catch (Exception e){
             e.printStackTrace();

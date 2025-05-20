@@ -9,7 +9,4 @@ public class TableLinkApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TableLinkApplication.class, args);
 	}
-
-	
-
 }
