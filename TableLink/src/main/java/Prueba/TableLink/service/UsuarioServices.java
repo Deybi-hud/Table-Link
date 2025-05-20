@@ -44,7 +44,7 @@ public class UsuarioServices {
             }
 
             if(usuario.getContrasena() != null) {
-                usuarioToUpdate.setContrasena(null);usuario.setContrasena(null);
+                usuarioToUpdate.setContrasena(usuario.getContrasena());
             }
             return usuariorRepository.save(usuarioToUpdate);
         } else {
