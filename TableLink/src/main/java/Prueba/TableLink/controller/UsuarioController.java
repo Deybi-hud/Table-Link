@@ -54,10 +54,10 @@ public class UsuarioController {
         }
     }
 
-   @DeleteMapping("/{usuarioId}")
-    public ResponseEntity<?> eliminar(@PathVariable Long usuarioId) {
+   @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminar(@PathVariable Long id) {
         try { 
-            usuarioServices.delete(usuarioId);             
+            usuarioServices.delete(id);             
             return ResponseEntity.noContent().build();
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
