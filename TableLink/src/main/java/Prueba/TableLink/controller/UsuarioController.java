@@ -62,7 +62,8 @@ public class UsuarioController {
         historialService.deleteByUsuarioId(usuarioId); 
         usuarioServices.delete(usuarioId);             
         return ResponseEntity.noContent().build();
-    } catch (Exception e) {
+    } 
+    catch (Exception e) {
         return ResponseEntity.notFound().build();
     }
 }
