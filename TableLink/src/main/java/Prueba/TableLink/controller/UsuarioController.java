@@ -51,9 +51,9 @@ public class UsuarioController {
         catch(Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se puedo guardar");
         }
-    } 
+    }
 
-     @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable Long id){
         try{
             usuarioServices.delete(id);
@@ -63,7 +63,7 @@ public class UsuarioController {
         }
     }
 
-     @PatchMapping("/{id}")
+    @PatchMapping("/{id}")
     public ResponseEntity<Usuario> patchUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
         try {
             Usuario updatedUsuario = usuarioServices.patchUsuario(id, usuario);
