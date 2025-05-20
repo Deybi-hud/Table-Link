@@ -31,6 +31,7 @@ public class UsuarioServices {
         usuariorRepository.deleteById(id);;
     }
 
+    //Query
     public List<Historial> obtenerHistorialPorUsuario(Long usuarioId) {
     return usuariorRepository.obtenerUsuario(usuarioId);
     }
