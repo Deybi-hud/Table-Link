@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import Prueba.TableLink.model.Historial;
 import Prueba.TableLink.model.Usuario;
 import Prueba.TableLink.service.UsuarioServices;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,5 +55,4 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se puedo guardar");
         }
     } 
-
 }

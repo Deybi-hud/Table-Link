@@ -15,9 +15,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     Optional<Usuario> findByNombreUsuario(String  nombreUsuario);
 
-    @Query("SELECT u FROM Historial u WHERE u.usuario.id = :usuarioId")
+    @Query("SELECT u FROM  u WHERE u.usuario.id = :usuarioId")
     List<Historial> obtenerUsuario(@Param("usuarioId") Long usuarioId);
-        
-
-
 }
