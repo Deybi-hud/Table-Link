@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import Prueba.TableLink.model.Usuario;
-import Prueba.TableLink.service.HistorialService;
 import Prueba.TableLink.service.UsuarioServices;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,7 +21,6 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioServices usuarioServices;
-    private HistorialService historialService;
 
 
     @GetMapping
@@ -58,8 +56,7 @@ public class UsuarioController {
 
    @DeleteMapping("/{usuarioId}")
     public ResponseEntity<?> eliminar(@PathVariable Long usuarioId) {
-        try {
-            historialService.deleteByUsuarioId(usuarioId); 
+        try { 
             usuarioServices.delete(usuarioId);             
             return ResponseEntity.noContent().build();
         } catch (Exception e) {

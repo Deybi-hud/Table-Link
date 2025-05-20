@@ -32,8 +32,4 @@ public class HistorialService {
         return historialRepository.obtenerHistorialPorUsuario(usuarioId);
     }
 
-    public void deleteByUsuarioId(Long usuarioId) {
-    historialRepository.deleteById(usuarioId);
-    }
-
 }
