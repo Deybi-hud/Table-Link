@@ -16,6 +16,7 @@ import Prueba.TableLink.model.Usuario;
 import Prueba.TableLink.repository.HistorialRepository;
 import Prueba.TableLink.repository.UsuarioRepository;
 import Prueba.TableLink.util.SqlParserUtil;
+import jakarta.transaction.Transactional;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -26,6 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
+@Transactional
 public class SqlToExcelService {
 
     @Autowired
