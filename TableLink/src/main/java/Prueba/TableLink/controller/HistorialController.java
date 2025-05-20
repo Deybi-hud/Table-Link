@@ -2,6 +2,7 @@ package Prueba.TableLink.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,7 @@ import Prueba.TableLink.model.Historial;
 import Prueba.TableLink.service.HistorialService;
 
 @RestController
-@RequestMapping("api/v1/historiales")
+@RequestMapping("api/v1/historial")
 public class HistorialController{
 
     @Autowired
@@ -43,14 +44,8 @@ public class HistorialController{
         }
     }
 
-    @PostMapping
-    public ResponseEntity<Historial> guardar(@RequestBody Historial historial) {
-        Historial nuevoHistorial = historialService.save(historial);
-        return ResponseEntity.status(HttpStatus.CREATED).body(nuevoHistorial);
-    }
-
-    //Query
-    @GetMapping("/usuarios/{id}")
+ 
+    @GetMapping("/usuario/{id}")
     public ResponseEntity<List<Historial>> obtenerHistorialPorUsuario(@PathVariable("id") Long usuarioId) {
         List<Historial> historial = historialService.obtenerHistorialPorUsuario(usuarioId);
         if (historial.isEmpty()) {
@@ -59,5 +54,10 @@ public class HistorialController{
         return ResponseEntity.ok(historial);
     }
 
-    
+
+    @PostMapping
+    public ResponseEntity<Historial> guardar(@RequestBody Historial historial) {
+        Historial nuevoHistorial = historialService.save(historial);
+        return ResponseEntity.status(HttpStatus.CREATED).body(nuevoHistorial);
+    }
 }
