@@ -50,8 +50,6 @@ public class HistorialController{
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoHistorial);
     }
 
-    
-
     //Query
     @GetMapping("/usuario/{id}")
     public ResponseEntity<List<Historial>> obtenerHistorialPorUsuario(@PathVariable("id") Long usuarioId) {
