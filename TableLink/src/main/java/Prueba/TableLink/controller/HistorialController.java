@@ -44,6 +44,14 @@ public class HistorialController{
         }
     }
 
+    @PostMapping
+    public ResponseEntity<Historial> guardar(@RequestBody Historial historial) {
+        Historial nuevoHistorial = historialService.save(historial);
+        return ResponseEntity.status(HttpStatus.CREATED).body(nuevoHistorial);
+    }
+
+    
+
     //Query
     @GetMapping("/usuario/{id}")
     public ResponseEntity<List<Historial>> obtenerHistorialPorUsuario(@PathVariable("id") Long usuarioId) {
@@ -54,9 +62,5 @@ public class HistorialController{
         return ResponseEntity.ok(historial);
     }
 
-    @PostMapping
-    public ResponseEntity<Historial> guardar(@RequestBody Historial historial) {
-        Historial nuevoHistorial = historialService.save(historial);
-        return ResponseEntity.status(HttpStatus.CREATED).body(nuevoHistorial);
-    }
+
 }
