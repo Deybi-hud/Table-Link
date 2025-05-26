@@ -44,7 +44,7 @@ public class SqlToExcelService {
         List<Map<String, String>> filas = SqlParserUtil.parseInsertStatements(contenidoSql);
 
         if (filas.isEmpty()) {
-            throw new IllegalArgumentException("No se encontraron INSERTs válidos en el archivo SQL.");
+            throw new IllegalArgumentException("No se encontraron INSERTS válidos en el archivo SQL.");
         }
 
             Historial historial = new Historial();
