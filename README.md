@@ -11,7 +11,7 @@ Nuestra misión en **Connect-Excel** es dar un impacto importante en la **optimi
 
 ## Características Principales
 
-- Convierte directamente una consulta SQL (INNSER INTO) a formato `.xlsx`
+- Convierte directamente una consulta SQL (INSER INTO) a formato `.xlsx`
 - Exportación segura de datos
 - Adaptado para microempresas
 
