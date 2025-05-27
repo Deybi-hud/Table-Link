@@ -26,4 +26,4 @@ Nuestra misión en **Connect-Excel** es dar un impacto importante en la **optimi
 ![Excel](https://img.shields.io/badge/Excel-217346?style=flat-&logo=microsoft-excel&logoColor=white)
 ![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=flat-badge&logo=xampp&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-badge&logo=mysql&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-badge&logo=html5&logoColor=white)
