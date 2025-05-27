@@ -13,7 +13,6 @@ Nuestra misión en **Connect-Excel** es dar un impacto importante en la **optimi
 
 - Convierte directamente una consulta SQL a formato `.xlsx`
 - Exportación segura de datos
-- Rápida integración con sistemas existentes
 - Adaptado para microempresas
 
 ---
