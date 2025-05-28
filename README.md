@@ -19,10 +19,10 @@ Nuestra misión en **Connect-Excel** es dar un impacto importante en la **optimi
 
 ## Tecnologías Usadas
 
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-badge&logo=springboot&logoColor=white)
-![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=flat-badge&logo=xampp&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-badge&logo=mysql&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-badge&logo=html5&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-badge&logo=springboot&logoColor=white)](#)
+[![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=flat-badge&logo=xampp&logoColor=white)](#)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-badge&logo=mysql&logoColor=white)](#)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-badge&logo=html5&logoColor=white)](#)
+[![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)](#)
 [![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?logo=openai&logoColor=white)](#)
 [![Visual Studio Code](https://custom-icon-badges.demolab.com/badge/Visual%20Studio%20Code-0078d7.svg?logo=vsc&logoColor=white)](#)
