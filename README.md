@@ -3,7 +3,7 @@
 
 ---
 
-## Objetivo
+# Objetivo
 
 Nuestra misión en **Connect-Excel** es dar un impacto importante en la **optimización de tiempos y recursos** de pequeñas y medianas empresas, ayudándolas a crecer con herramientas **accesibles y potentes**.
 
