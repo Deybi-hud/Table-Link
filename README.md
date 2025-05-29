@@ -16,7 +16,7 @@ Nuestra misión en **Connect-Excel** es dar un impacto importante en la **optimi
 - Adaptado para microempresas
 
 > [!IMPORTANT]
-> Esto solo funciona por Postman por el metodo Path.
+> Esto solo funciona por **Postman** por el metodo PATH.
 
 ---
 
