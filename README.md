@@ -16,7 +16,7 @@ Nuestra misión en **Connect-Excel** es dar un impacto importante en la **optimi
 - Adaptado para microempresas
 
 > [!IMPORTANT]
-> Key information users need to know to achieve their goal.
+> Esto solo funciona por Postman por el metodo Path.
 
 ---
 
