@@ -15,6 +15,9 @@ Nuestra misión en **Connect-Excel** es dar un impacto importante en la **optimi
 - Exportación segura de datos
 - Adaptado para microempresas
 
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
 ---
 
 ## Tecnologías Usadas
