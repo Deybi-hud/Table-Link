@@ -1,6 +1,6 @@
 # Table-Link: 
 **Table-Link** es una herramienta que ayuda a convertir consultas SQL directamente a archivos **Excel XLSX**. Desarrollada por **Connect-Excel**, esta solución busca mejorar la eficiencia de microempresas al facilitar la generación de reportes, permitiendo un desarrollo **más rápido, seguro y económico**.
-
+>[!IMPORTANT]
 ---
 
 ## Objetivo
