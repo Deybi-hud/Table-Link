@@ -28,6 +28,6 @@ Nuestra misión en **Connect-Excel** es dar un impacto importante en la **optimi
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-badge&logo=html5&logoColor=white)](#)
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)](#)
 [![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?logo=openai&logoColor=white)](#)
-[![Visual Studio Code](https://custom-icon-badges.demolab.com/badge/Visual%20Studio%20Code-0078d7.svg?logo=vsc&logoColor=white)](#)
+
 
 
