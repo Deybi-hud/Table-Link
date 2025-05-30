@@ -11,12 +11,12 @@ Nuestra misión en **Connect-Excel** es dar un impacto importante en la **optimi
 
 ## Características Principales
 
+> [!IMPORTANT]
+> El proyecto solo funciona por **Postman**.
+
 - Convierte directamente una consulta SQL `INSER INTO` a formato `.xlsx`
 - Exportación segura de datos
 - Adaptado para microempresas
-
-> [!IMPORTANT]
-> El proyecto solo funciona por **Postman**.
 
 ---
 
