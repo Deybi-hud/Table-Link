@@ -71,21 +71,6 @@
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.6.0</version>
         </dependency>
-        <dependency>
-		<groupId>net.datafaker</groupId>
-		<artifactId>datafaker</artifactId>
-		<version>2.4.2</version>
-	</dependency>
-	<dependency>
-		<groupId>org.mockito</groupId>
-		<artifactId>mockito-core</artifactId>
-		<scope>test</scope>
-	</dependency>
-	<dependency>
-		<groupId>org.junit.jupiter</groupId>
-		<artifactId>junit-jupiter-engine</artifactId>
-		<scope>test</scope>
-	</dependency>
     </dependencies>
 
     <build>
