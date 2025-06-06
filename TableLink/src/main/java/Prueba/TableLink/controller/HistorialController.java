@@ -16,9 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import Prueba.TableLink.model.Historial;
 import Prueba.TableLink.service.HistorialService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("api/v1/historiales")
+@Tag(name = "Historiales", description = "Aqui estan los historiles")
 public class HistorialController{
 
     @Autowired
@@ -26,6 +29,7 @@ public class HistorialController{
 
 
     @GetMapping
+    @Operation(summary = "Obtener todos los historiales", description = "Obtiene una lista de los historiles")
     public ResponseEntity<List<Historial>>listar(){
         List<Historial> historial = historialService.findAll();
         if(historial.isEmpty()){
