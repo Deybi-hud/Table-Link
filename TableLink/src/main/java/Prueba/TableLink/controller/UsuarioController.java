@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import Prueba.TableLink.model.Usuario;
 import Prueba.TableLink.service.UsuarioServices;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("api/v1/usuarios")
+@Tag(name = "Usuarios", description = "Aquí estan los usuarios")
 public class UsuarioController {
 
     @Autowired

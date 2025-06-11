@@ -39,6 +39,7 @@ public class HistorialController{
     }    
 
     @GetMapping("/{id}")
+    @Operation(summary = "Obtener un historial", description = "Obtiene una lista por id historiles")
     public ResponseEntity<Historial> buscar(@PathVariable long id) {
         try{
             Historial historial = historialService.getById(id);
@@ -50,12 +51,14 @@ public class HistorialController{
     }
 
     @PostMapping
+    @Operation(summary = "", description = "")
     public ResponseEntity<Historial> guardar(@RequestBody Historial historial) {
         Historial nuevoHistorial = historialService.save(historial);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoHistorial);
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Elimina un historial", description = "Elimina un historile por id")
     public ResponseEntity<?> eliminar(@PathVariable Long id) {
         try { 
             historialService.delete(id);             

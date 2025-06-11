@@ -1,7 +1,5 @@
 package Prueba.TableLink.config;
 
-
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,5 +16,6 @@ public class SwaggerConfig {
         .info(new Info()
         .title("API de convertidor de sql a excel")
         .version("1.0"));
+
     }
 }
