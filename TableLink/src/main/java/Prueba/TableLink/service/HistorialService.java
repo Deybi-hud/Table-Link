@@ -16,6 +16,7 @@ public class HistorialService {
         return historialRepository.findAll();
     }
 
+    @SuppressWarnings("deprecation")
     public Historial getById(long id){
         return historialRepository.getById(id);
     }
