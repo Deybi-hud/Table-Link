@@ -1,4 +1,4 @@
-<h1 align="center">📊 Table-Link</h1>
+<h1 align="center">Table-Link</h1>
 <p align="center"><em>Convierte tus consultas SQL directamente a archivos Excel (.xlsx)</em></p>
 <p align="center">Una herramienta creada por <strong>Connect-Excel</strong> para optimizar procesos de pequeñas empresas.</p>
 
