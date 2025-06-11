@@ -9,6 +9,7 @@ import jakarta.transaction.Transactional;
 @Service
 @Transactional
 public class HistorialService {
+    
     @Autowired
     HistorialRepository historialRepository;
 

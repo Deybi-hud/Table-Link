@@ -19,11 +19,14 @@ public class SqlParserUtil {
         Matcher matcher = pattern.matcher(sqlContent);
 
         while (matcher.find()) {
+
             String[] columns = matcher.group(2).split(",");
             String valuesGroup = matcher.group(3).trim();
 
             Matcher valueMatcher = Pattern.compile("\\(([^)]+)\\)").matcher(valuesGroup);
+
             while (valueMatcher.find()) {
+
                 String[] values = valueMatcher.group(1).split(",(?=(?:[^']*'[^']*')*[^']*$)"); 
                 if (columns.length != values.length) continue;
 
@@ -32,6 +35,7 @@ public class SqlParserUtil {
                     row.put(columns[i].trim(), values[i].trim().replaceAll("^'|'$", "")); 
                 }
                 result.add(row);
+                
             }
         }
 
