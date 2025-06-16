@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import Prueba.TableLink.model.Usuario;
 import Prueba.TableLink.repository.HistorialInicioRepository;
-import Prueba.TableLink.repository.HistorialRepository;
 import Prueba.TableLink.repository.UsuarioRepository;
 import net.datafaker.Faker;
 
@@ -18,8 +17,6 @@ import net.datafaker.Faker;
 public class DataLoader implements CommandLineRunner {
 
     @Autowired UsuarioRepository usuarioRepository;
-
-    @Autowired HistorialRepository historialRepository;
 
     @Autowired HistorialInicioRepository historialInicioRepository;
 
