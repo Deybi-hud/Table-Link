@@ -14,8 +14,7 @@ public class SwaggerConfig {
        
         return new OpenAPI()
         .info(new Info()
-        .title("API de convertidor de sql a excel")
+        .title("API de convertidor")
         .version("1.0"));
-
     }
 }

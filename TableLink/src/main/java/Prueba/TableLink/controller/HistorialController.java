@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("api/v1/historiales")
-@Tag(name = "Historiales", description = "Aqui estan los historiles")
+@Tag(name = "Historiales", description = "Aqui estan los historiales")
 public class HistorialController{
 
     @Autowired
@@ -29,7 +29,7 @@ public class HistorialController{
 
 
     @GetMapping
-    @Operation(summary = "Obtener todos los historiales", description = "Obtiene una lista de los historiles")
+    @Operation(summary = "Esta api llama mustra todo los historiales de conversion", description = "esta api se encarga de obtener todos los historiles que hay")
     public ResponseEntity<List<Historial>>listar(){
         List<Historial> historial = historialService.findAll();
         if(historial.isEmpty()){
@@ -39,7 +39,7 @@ public class HistorialController{
     }    
 
     @GetMapping("/{id}")
-    @Operation(summary = "Obtener un historial", description = "Obtiene una lista por id historiles")
+    @Operation(summary = "Esta api llama a un historial por su id", description = "esta api se encarga de obtener a un historial por id")
     public ResponseEntity<Historial> buscar(@PathVariable long id) {
         try{
             Historial historial = historialService.getById(id);
@@ -51,14 +51,14 @@ public class HistorialController{
     }
 
     @PostMapping
-    @Operation(summary = "", description = "")
+    @Operation(summary = "Esta api se encarga de crear a un historial", description = "Esta api se encarga de crear una nuevo historial")
     public ResponseEntity<Historial> guardar(@RequestBody Historial historial) {
         Historial nuevoHistorial = historialService.save(historial);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoHistorial);
     }
 
     @DeleteMapping("/{id}")
-    @Operation(summary = "Elimina un historial", description = "Elimina un historile por id")
+    @Operation(summary = "Esta api elimina a un historial", description = "esta api se encarga de eliminar a un historial existente")
     public ResponseEntity<?> eliminar(@PathVariable Long id) {
         try { 
             historialService.delete(id);             

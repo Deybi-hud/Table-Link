@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import Prueba.TableLink.model.Usuario;
 import Prueba.TableLink.service.UsuarioServices;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,6 +27,7 @@ public class UsuarioController {
 
 
     @GetMapping
+    @Operation(summary = "Esta api llama todos los usuarios", description = "esta api se encarga de obtener todos los usuarios que hay")
     public ResponseEntity<List<Usuario>>listar(){
         List<Usuario> usuario = usuarioServices.findAll();
         if(usuario.isEmpty()){
@@ -35,6 +37,7 @@ public class UsuarioController {
     }    
 
     @GetMapping("/{id}")
+    @Operation(summary = "Esta api llama a un usuario por su id", description = "esta api se encarga de obtener a un usuarios por id")
     public ResponseEntity<Usuario> buscar(@PathVariable long id) {
         try{
             Usuario usuario = usuarioServices.getById(id);
@@ -46,6 +49,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/registrar")
+    @Operation(summary = "Esta api se encarga de crear a un usuarios", description = "Esta api se encarga de crear una nuevo usuario")
     public ResponseEntity<?> registrar(@RequestBody Usuario usuario) {
         try{
         Usuario nuevoUsuario = usuarioServices.save(usuario);
@@ -56,22 +60,24 @@ public class UsuarioController {
         }
     }
 
-   @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminar(@PathVariable Long id) {
-        try { 
-            usuarioServices.delete(id);             
-            return ResponseEntity.noContent().build();
-        } catch (Exception e) {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
     @PatchMapping("/{id}")
+    @Operation(summary = "Esta api actualiza parcialmente un usuario", description = "esta api se encarga de actualizar parcialmente a un usuario existente")
     public ResponseEntity<Usuario> patchUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
         try {
             Usuario updatedUsuario = usuarioServices.patchUsuario(id, usuario);
             return ResponseEntity.ok(updatedUsuario);
         } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    @Operation(summary = "Esta api elimina a un usuario", description = "esta api se encarga de eliminar a un usuario existente")
+    public ResponseEntity<?> eliminar(@PathVariable Long id) {
+        try { 
+            usuarioServices.delete(id);             
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
     }
