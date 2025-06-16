@@ -8,7 +8,7 @@
 
 ---
 
-## Características Principales
+<h2 align="center">Características Principales</h2>
 
 > [!IMPORTANT]
 > El proyecto solo funciona por **Postman**.
