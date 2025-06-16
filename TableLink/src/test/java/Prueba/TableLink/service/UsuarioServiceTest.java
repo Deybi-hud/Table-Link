@@ -30,6 +30,22 @@ public class UsuarioServiceTest {
             "hola1234"      
         );
     }
-    
 
+    @Test
+    public void testFindAll(){
+        when(usuarioRepository.findAll()).thenReturn(List.of(createUsuario()));
+        List<Usuario> usuario = usuarioServices.findAll();
+        assertNotNull(usuario);
+        assertEquals(1, usuario.size());
+    }
+
+    @Test
+    public void testFindById(){
+        when(usuarioRepository.findById(1L)).thenReturn(java.util.Optional.of(createUsuario()));
+        Usuario usuario = usuarioServices.getById(1L)
+        assertNotNull(usuario);
+        assertEquals("D", usuario.getNombreUsuario());
+    }
+
+    
 }
