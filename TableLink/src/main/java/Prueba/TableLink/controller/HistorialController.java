@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("api/v1/historiales")
-@Tag(name = "Historiales", description = "Aqui estan los historiales")
+@Tag(name = "Historiales", description = "Aqui estan los historiales de conversion")
 public class HistorialController{
 
     @Autowired
@@ -29,7 +29,7 @@ public class HistorialController{
 
 
     @GetMapping
-    @Operation(summary = "Esta api llama mustra todo los historiales de conversion", description = "esta api se encarga de obtener todos los historiles que hay")
+    @Operation(summary = "Esta api llama a todo los historiales de conversion", description = "esta api se encarga de obtener todos los historiles que hay")
     public ResponseEntity<List<Historial>>listar(){
         List<Historial> historial = historialService.findAll();
         if(historial.isEmpty()){

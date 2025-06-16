@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/api/v1/convertir")
-@Tag(name = "Convertidor")
+@Tag(name = "Convertidor",description = "Aqui esta el convertidor de archivos")
 public class SqlToExcelController {
 
     @Autowired

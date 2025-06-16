@@ -20,14 +20,14 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("api/v1/historialSesion")
-@Tag(name = "HistorialInicio", description = "Aqui estan los historiales de inicios de sesion")
+@Tag(name = "Historial de inicio", description = "Aqui estan los historiales de inicio de sesión")
 public class HistorialInicioSesionController {
 
     @Autowired
     private HistorialInicioSesionService historialInicioSesionService;
 
     @GetMapping
-    @Operation(summary = "Obtener todos los historiales", description = "Obtiene una lista de los historiles")
+    @Operation(summary = "Esta api llama todo a los historiales de inicio de sesión", description = "esta api se encarga de obtener todos los historiales de inicio de sesión que hay")
     public ResponseEntity<List<HistorialInicioSesion>>listar(){
         List<HistorialInicioSesion> historialInicioSesion = historialInicioSesionService.findAll();
         if(historialInicioSesion.isEmpty()){
@@ -37,7 +37,7 @@ public class HistorialInicioSesionController {
     }    
 
     @GetMapping("/{id}")
-    @Operation(summary = "Obtener un historial", description = "Obtiene una lista por id historiles")
+    @Operation(summary = "Esta api llama a los historiales de inicio de sesión", description = "esta api se encarga de obtener a los historiales de inicio de sesión")
     public ResponseEntity<HistorialInicioSesion> buscar(@PathVariable long id) {
         try{
             HistorialInicioSesion historialInicioSesion = historialInicioSesionService.getById(id);
@@ -49,14 +49,14 @@ public class HistorialInicioSesionController {
     }
 
     @PostMapping
-    @Operation(summary = "", description = "")
+    @Operation(summary = "Esta api se encarga de crear historial de inicio de sesión", description = "Esta api se encarga de crear un historial de inicio de sesión")
     public ResponseEntity<HistorialInicioSesion> guardar(@RequestBody HistorialInicioSesion historialInicioSesion) {
         HistorialInicioSesion historialInicioSesion1 = historialInicioSesionService.save(historialInicioSesion);
         return ResponseEntity.status(HttpStatus.CREATED).body(historialInicioSesion1);
     }
 
     @DeleteMapping("/{id}")
-    @Operation(summary = "Elimina un historial", description = "Elimina un historial por id")
+    @Operation(summary = "Esta api elimina a un historial de inicio de sesión", description = "esta api se encarga de eliminar a un historial de inicio de sesión")
     public ResponseEntity<?> eliminar(@PathVariable Long id) {
         try { 
             historialInicioSesionService.delete(id);             
@@ -66,6 +66,7 @@ public class HistorialInicioSesionController {
         }
     }
 
+    
     //Query
     @GetMapping("/usuario/{id}")
     public ResponseEntity<List<HistorialInicioSesion>> obtenerHistorialPorUsuario(@PathVariable("id") Long usuarioId) {
@@ -76,7 +77,5 @@ public class HistorialInicioSesionController {
         return ResponseEntity.ok(historial);
     }
 
-
-    
 
 }
