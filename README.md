@@ -27,7 +27,7 @@
 [![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-badge&logo=mysql&logoColor=white)](#)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-badge&logo=html5&logoColor=white)](#)
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)](#)
-[![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?logo=openai&logoColor=white)]
+[![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?logo=openai&logoColor=white)](#)
 
 
 
