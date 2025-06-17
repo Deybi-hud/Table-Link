@@ -12,14 +12,10 @@
 
 > [!IMPORTANT]
 > El proyecto solo funciona por **Postman**.
-
-- Convierte directamente una consulta SQL `INSER INTO` a formato `.xlsx`
-- Exportación segura de datos
-- Adaptado para microempresas
 <ul>
-  <li>Elemento 1</li>
-  <li>Elemento 2</li>
-  <li>Elemento 3</li>
+  <li>Convierte directamente una consulta SQL `INSER INTO` a formato `.xlsx` 1</li>
+  <li>Exportación segura de datos 2</li>
+  <li>Adaptado para microempresas 3</li>
 </ul>
 
 ---
