@@ -1,7 +1,5 @@
 package Prueba.TableLink;
 
-import java.util.Random;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
@@ -24,9 +22,7 @@ public class DataLoader implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Faker faker = new Faker();
-        Random random = new Random();
-
-
+        
         for(int i = 0; i < 10; i++){
             Usuario usuario = new Usuario();
             usuario.setId(1 + i);

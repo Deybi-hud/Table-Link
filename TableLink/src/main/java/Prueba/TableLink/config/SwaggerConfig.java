@@ -11,7 +11,7 @@ import io.swagger.v3.oas.models.info.License;
 public class SwaggerConfig {
 
     @Bean
-    public OpenAPI customOpenAPI(){
+    OpenAPI customOpenAPI(){
         
         return new OpenAPI()
         .info(new Info()

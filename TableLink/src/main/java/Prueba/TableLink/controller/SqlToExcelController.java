@@ -25,7 +25,7 @@ public class SqlToExcelController {
 
     @PostMapping
     @Operation(summary = "Esta api sube consulta SQL", description = "Esta api permite subir un consulta SQL")
-    public ResponseEntity<byte[]> convertirArchivoSql(@RequestParam("archivoSql") MultipartFile archivoSql, @RequestParam("nombreUsuario") String nombreUsuario){       
+    public ResponseEntity<byte[]> convertirArchivoSql(@RequestParam MultipartFile archivoSql, @RequestParam String nombreUsuario){       
         try {
             byte[] excelFile = exportService.convertirSqlAExcel(archivoSql, nombreUsuario);
 
