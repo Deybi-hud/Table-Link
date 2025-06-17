@@ -19,7 +19,7 @@
 
 ---
 
-## Tecnologías Usadas
+<h2 align="center">Tecnologías Usadas</h2>
 
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-badge&logo=springboot&logoColor=white)](#)
 [![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=flat-badge&logo=xampp&logoColor=white)](#)
