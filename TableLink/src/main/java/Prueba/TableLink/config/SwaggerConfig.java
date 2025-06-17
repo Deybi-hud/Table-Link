@@ -18,5 +18,6 @@ public class SwaggerConfig {
         .title("API de convertidor")
         .version("1.0")
         .license(new License().name("GNU General Public License v3.0").url("https://github.com/Deybi-hud/Table-Link/blob/main/LICENSE")));
+        
     }
 }
