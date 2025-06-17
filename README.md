@@ -2,9 +2,9 @@
 <p align="center"><em>Convierte tus consultas SQL directamente a archivos Excel (.xlsx)</em></p>
 
 ---
+
 <h2 align="center">Objetivo</h2>
 <p align="center"><em>Nuestra misión en Connect-Excel es dar un impacto importante en la optimización de tiempos de pequeñas y medianas empresas, ayudándolas a crecer con herramientas accesibles y potentes.</em></p>
-
 
 ---
 
@@ -12,14 +12,15 @@
 
 > [!IMPORTANT]
 > El proyecto solo funciona por **Postman**.
-
-- Convierte directamente una consulta SQL `INSER INTO` a formato `.xlsx`
-- Exportación segura de datos
-- Adaptado para microempresas
+<ul>
+  <li>Convierte directamente una consulta <mark>SQL INSER INTO a formato .xlsx</mark></li>
+  <li>Exportación segura de datos</li>
+  <li>Adaptado para microempresas</li>
+</ul>
 
 ---
 
-## Tecnologías Usadas
+<h2 align="center">Tecnologías Usadas</h2>
 
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-badge&logo=springboot&logoColor=white)](#)
 [![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=flat-badge&logo=xampp&logoColor=white)](#)
