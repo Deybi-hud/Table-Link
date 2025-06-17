@@ -16,7 +16,11 @@
 - Convierte directamente una consulta SQL `INSER INTO` a formato `.xlsx`
 - Exportación segura de datos
 - Adaptado para microempresas
-
+<ul>
+  <li>Elemento 1</li>
+  <li>Elemento 2</li>
+  <li>Elemento 3</li>
+</ul>
 ---
 
 <h2 align="center">Tecnologías Usadas</h2>
