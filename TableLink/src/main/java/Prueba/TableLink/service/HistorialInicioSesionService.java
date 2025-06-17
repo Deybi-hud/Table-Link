@@ -22,6 +22,7 @@ public class HistorialInicioSesionService {
         return historialInicioRepository.findAll();
     }
 
+    @SuppressWarnings("deprecation")
     public HistorialInicioSesion getById(Long id){
         return historialInicioRepository.getById(id);
     }

@@ -31,7 +31,7 @@ public class DataLoader implements CommandLineRunner {
             Usuario usuario = new Usuario();
             usuario.setId(1 + i);
             usuario.setNombreUsuario(faker.name().fullName());
-            usuario.setContrasena(null);
+            usuario.setContrasena(faker.internet().password());
             usuarioRepository.save(usuario);
         }
     }
