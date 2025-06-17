@@ -2,6 +2,10 @@ package Prueba.TableLink.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.List;
@@ -27,7 +31,7 @@ public class UsuarioServiceTest {
         return new Usuario(
             1,
             "D",
-            "hola1234"      
+            "hola1234"  
         );
     }
 
@@ -56,5 +60,24 @@ public class UsuarioServiceTest {
         assertEquals("D", savedUsuario.getNombreUsuario());
     }
 
-    
+    @Test
+    public void testPatchUsuario(){
+        Usuario existingUsuario = createUsuario();
+        Usuario patchData = new Usuario();
+        patchData.setNombreUsuario("D Actualizado");
+
+        when(usuarioRepository.findById(1L)).thenReturn(java.util.Optional.of(existingUsuario));
+        when(usuarioRepository.save(any(Usuario.class))).thenReturn(existingUsuario);
+
+        Usuario patchedUsuario = usuarioServices.patchUsuario(1L, patchData);
+        assertNotNull(patchedUsuario);
+        assertEquals("D Actualizado", patchedUsuario.getNombreUsuario());
+    }
+
+    @Test
+    public void testDeleteById(){
+        doNothing().when(usuarioRepository).deleteById(1L);
+        usuarioRepository.deleteById(1L);
+        verify(usuarioRepository, times(1)).deleteById(1L);
+    }    
 }
