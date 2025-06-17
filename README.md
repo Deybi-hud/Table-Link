@@ -2,9 +2,9 @@
 <p align="center"><em>Convierte tus consultas SQL directamente a archivos Excel (.xlsx)</em></p>
 
 ---
-<h2 align="center">Objetivo</h2>
-<p align="center"><em>Nuestra misión en Connect-Excel es dar un impacto importante en la optimización de tiempos de pequeñas y medianas empresas, ayudándolas a crecer con herramientas accesibles y potentes.</em></p>
 
+<h1 align="center">Objetivo</h1>
+<p align="center"><em>Nuestra misión en Connect-Excel es dar un impacto importante en la optimización de tiempos de pequeñas y medianas empresas, ayudándolas a crecer con herramientas accesibles y potentes.</em></p>
 
 ---
 
