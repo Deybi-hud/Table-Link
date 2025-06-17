@@ -23,6 +23,7 @@ public class InicioSesionService {
     private HistorialInicioRepository historialInicioRepository;
 
     public String login(String correo, String contrasena){
+        
         Usuario usuario = usuarioRepository.findByCorreo(correo)
         .orElseThrow(() -> new RuntimeException("Correo no encontrado"));
 
@@ -31,8 +32,7 @@ public class InicioSesionService {
         }
 
         LocalDate hoy = LocalDate.now();
-        Optional<HistorialInicioSesion> historialExistente = historialInicioRepository
-        .findByUsuarioAndFechaConexion(usuario, hoy);
+        Optional<HistorialInicioSesion> historialExistente = historialInicioRepository.findByUsuarioAndFechaConexion(usuario, hoy);
 
         if(historialExistente.isPresent()){
             HistorialInicioSesion historial = historialExistente.get();
