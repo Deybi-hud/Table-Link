@@ -47,5 +47,14 @@ public class UsuarioServiceTest {
         assertEquals("D", usuario.getNombreUsuario());
     }
 
+    @Test
+    public void testSave(){
+        Usuario usuario = createUsuario();
+        when(usuarioRepository.save(usuario)).thenReturn(usuario);
+        Usuario savedUsuario = usuarioServices.save(usuario);
+        assertNotNull(savedUsuario);
+        assertEquals("D", savedUsuario.getNombreUsuario());
+    }
+
     
 }
