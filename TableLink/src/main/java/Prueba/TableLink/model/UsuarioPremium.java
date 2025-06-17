@@ -43,5 +43,4 @@ public class UsuarioPremium {
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = true)
     private Usuario usuario;
-
 }

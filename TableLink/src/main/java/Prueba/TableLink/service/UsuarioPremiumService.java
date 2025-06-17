@@ -60,7 +60,9 @@ public class UsuarioPremiumService {
             }
 
             return usuariorPremiumRepository.save(usuarioToUpdate);
-        } else {
+        } 
+        
+        else{
             return null;
         }
     }
