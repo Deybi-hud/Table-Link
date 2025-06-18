@@ -31,7 +31,8 @@ public class UsuarioServiceTest {
         return new Usuario(
             1,
             "D",
-            "hola1234"  
+            "hola1234",
+            "No"
         );
     }
 

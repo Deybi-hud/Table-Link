@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 
-public class UsuarioPremium {
+public class DatoPremium {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,9 +36,6 @@ public class UsuarioPremium {
 
     @Column(nullable = false, length = 10)
     private String montoPago;
-
-    @Column(nullable = false, length = 2)
-    private String esPremium; 
 
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = true)

@@ -7,26 +7,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-import Prueba.TableLink.model.UsuarioPremium;
-import Prueba.TableLink.repository.UsuarioPremiumRepository;
+import Prueba.TableLink.model.DatoPremium;
+import Prueba.TableLink.repository.DatoPremiumRepository;
 import jakarta.transaction.Transactional;
 
 @Service
 @Transactional
-public class UsuarioPremiumService {
+public class DatoPremiumService {
 
      @Autowired
-    UsuarioPremiumRepository usuariorPremiumRepository;
+    DatoPremiumRepository usuariorPremiumRepository;
 
-    public List<UsuarioPremium>findAll(){
+    public List<DatoPremium>findAll(){
         return usuariorPremiumRepository.findAll();
     }
 
-    public UsuarioPremium getById(long id){
+    public DatoPremium getById(long id){
         return usuariorPremiumRepository.getReferenceById(id);
     }
 
-    public UsuarioPremium save(UsuarioPremium usuarioPremium){
+    public DatoPremium save(DatoPremium usuarioPremium){
         return usuariorPremiumRepository.save(usuarioPremium);
     }
 
@@ -34,11 +34,11 @@ public class UsuarioPremiumService {
         usuariorPremiumRepository.deleteById(id);
     }
 
-     public UsuarioPremium patchUsuarioPremium(Long id, UsuarioPremium usuarioPremium){
-        Optional<UsuarioPremium> usuarioOptional = usuariorPremiumRepository.findById(id);
+     public DatoPremium patchUsuarioPremium(Long id, DatoPremium usuarioPremium){
+        Optional<DatoPremium> usuarioOptional = usuariorPremiumRepository.findById(id);
         if (usuarioOptional.isPresent()) {
             
-            UsuarioPremium usuarioToUpdate = usuarioOptional.get();
+            DatoPremium usuarioToUpdate = usuarioOptional.get();
             if (usuarioPremium.getUsuario() != null){
                 usuarioToUpdate.setUsuario(usuarioPremium.getUsuario());
             }
@@ -53,10 +53,6 @@ public class UsuarioPremiumService {
             
             if(usuarioPremium.getTipoPlan() == null){
                 usuarioToUpdate.setTipoPlan(usuarioPremium.getTipoPlan());
-            }
-
-            if(usuarioPremium.getEsPremium() == null){
-                usuarioToUpdate.setEsPremium(usuarioPremium.getEsPremium());
             }
 
             return usuariorPremiumRepository.save(usuarioToUpdate);

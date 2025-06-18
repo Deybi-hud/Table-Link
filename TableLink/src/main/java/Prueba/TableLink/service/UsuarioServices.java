@@ -47,6 +47,9 @@ public class UsuarioServices {
             if(usuario.getContrasena() != null) {
                 usuarioToUpdate.setContrasena(usuario.getContrasena());
             }
+            if(usuario.getEsPremium() != null){
+                usuarioToUpdate.setEsPremium(usuario.getEsPremium());
+            }
             return usuariorRepository.save(usuarioToUpdate);
         } else {
             return null;
